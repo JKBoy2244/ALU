@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 
-entity ALU_slice is
+entity ALU_portmap is
 
     port (
 
@@ -15,9 +15,9 @@ entity ALU_slice is
       Y : out std_logic                          --Y is an output
     );
 
-end ALU_slice;
+end ALU_portmap;
 
-architecture behavioural of ALU_slice is 
+architecture behavioural of ALU_portmap is 
 
    signal S1, S2, S3, S4, S5, B_extra : std_logic;
 
