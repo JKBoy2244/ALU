@@ -8,13 +8,13 @@ However, getting from the main inputs (A and B) to the main output (Y) in terms 
 
 The first part of the implementation is just writing the logic equations of the 6 signals first. So, for instance:
 
-  B_extra = B xor F(0); S1 <= A nor B; S2 <= A nand B; (for S3, S4, C_out, the equations weren't written as they're all inside the port map which takes care of the implementations).
+  - B_extra = B xor F(0); S1 <= A nor B; S2 <= A nand B; (for S3, S4, C_out, the equations weren't written as they're all inside the port map which takes care of the implementations).
 
-  However, in the ALUcode.vhd, S3 <= A xor B_extra xor C_in; S4 <= A xor B_extra xor C_in; C_out <= (A and B_extra) or (C_in and (A xor B_extra));
+  - However, in the ALUcode.vhd, S3 <= A xor B_extra xor C_in; S4 <= A xor B_extra xor C_in; C_out <= (A and B_extra) or (C_in and (A xor B_extra));
 
 The second part of the implementation is the implementation of the multiplexer which basically treats S5 as a signal output and S1 to S4 as signal inputs, so here this time, it's mainly on the signals that are being used:
 
-   There are 4 signal inputs so hence there should be 4 possible binary outputs only using the fact that the square root of 4 is 2 so using 2-digit binary values: "00", "01", "10", "11".
+  - There are 4 signal inputs so hence there should be 4 possible binary outputs only using the fact that the square root of 4 is 2 so using 2-digit binary values: "00", "01", "10", "11".
    When "00", S5 <= S1;   "01", S5 <= S2;   "10", S5 <= S3;   "11", S5 <= S4;
 
 The third part of the implementation is the final AND gate on the right side where almost most of the operations are done/complete and there's one final thing to do and that's the Y output only turns on if both S5 turns on and Enable (En on the diagram) also turns on too. Hence, this deduces that Y <= S5 and En.
