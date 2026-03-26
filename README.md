@@ -2,6 +2,8 @@
 
 <img width="773" height="499" alt="image" src="https://github.com/user-attachments/assets/ea47afe3-dc6b-43e1-8315-4f036173b4ae" />     ==> Testbench
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 This is the ALU component of the CPU which is essentially one of the most important components within a CPU. Inside the CPU, the ALU executes arithmetic and logical operations on binary data. Arithmetic operations include addition and subtraction. It's basically a calculation engine that processes the data being fetched from the memory to perform the instructions and bit shifting too. Without the ALU, the CPU can't process the data which would make the software impossible to run as its main role is to perform operation on binary data. 
 
