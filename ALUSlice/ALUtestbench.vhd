@@ -55,7 +55,6 @@ architecture behavioural of ALU_testbench is
         assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=1" severity error;
 
 
-
         A <= '0'; B <= '0'; C_in <= '0'; En <= '1'; F <= "00"; wait for 10 ns;
         assert (Y = '1' and C_out = '0') report "Err: NOR 000" severity error;
 
@@ -79,6 +78,157 @@ architecture behavioural of ALU_testbench is
 
         A <= '1'; B <= '1'; C_in <= '1'; En <= '1'; F <= "00"; wait for 10 ns;
         assert (Y = '0' and C_out = '1') report "Err: NOR 111" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=0" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=1" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=1, Cin=0" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=0, B=1, Cin=1" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=1, B=0, Cin=0" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=0, Cin=1" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=0" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '0'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=1" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: AND 000" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: AND 001" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: AND 010" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: AND 011" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: AND 100" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: AND 101" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '1' and C_out = '1') report "Err: AND 110" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '1'; F <= "01"; wait for 10 ns;
+        assert (Y = '1' and C_out = '1') report "Err: AND 111" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=0" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=1" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=1, Cin=0" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=0, B=1, Cin=1" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=1, B=0, Cin=0" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=0, Cin=1" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=0" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '0'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=1" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: ADD 000" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '1' and C_out = '0') report "Err: ADD 001" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '1' and C_out = '0') report "Err: ADD 010" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: ADD 011" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '1' and C_out = '0') report "Err: ADD 100" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: ADD 101" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: ADD 110" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '1'; F <= "10"; wait for 10 ns;
+        assert (Y = '1' and C_out = '1') report "Err: ADD 111" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=0" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=0, Cin=1" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=0, B=1, Cin=0" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=0, B=1, Cin=1" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: En=0, A=1, B=0, Cin=0" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=0, Cin=1" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=0" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '0'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: En=0, A=1, B=1, Cin=1" severity error;
+
+
+        A <= '0'; B <= '0'; C_in <= '0'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: XOR 000" severity error;
+
+        A <= '0'; B <= '0'; C_in <= '1'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '0') report "Err: XOR 001" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '0'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '1' and C_out = '0') report "Err: XOR 010" severity error;
+
+        A <= '0'; B <= '1'; C_in <= '1'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '1' and C_out = '1') report "Err: XOR 011" severity error;
+                                                                                                                  
+        A <= '1'; B <= '0'; C_in <= '0'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '1' and C_out = '0') report "Err: XOR 100" severity error;
+
+        A <= '1'; B <= '0'; C_in <= '1'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '1' and C_out = '1') report "Err: XOR 101" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '0'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: XOR 110" severity error;
+
+        A <= '1'; B <= '1'; C_in <= '1'; En <= '1'; F <= "11"; wait for 10 ns;
+        assert (Y = '0' and C_out = '1') report "Err: XOR 111" severity error;
+
       
       wait;
    end process;
